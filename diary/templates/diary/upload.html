@@ -1,3 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" type="image/x-icon" href="{{imghost}}favicon.ico">
+    <link rel="shortcut icon" href="{{imghost}}favicon.ico" type="image/x-icon">
+<style>
+        html { 
+        background: url('{{imghost}}background.jpg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        }
+        .btn {
+        background-color: DodgerBlue;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* Darker background on mouse-over */
+    .btn:hover {
+        background-color: RoyalBlue;
+    }
+</style>
+
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <!--
@@ -9,11 +35,11 @@
     <hr>-->
     <input type="file" name="myfile">
     <hr>
-    <button type="submit">Upload</button>
+    <button class="btn" type="submit" align="left"><i class="fa fa"></i>Upload</button>
 </form>
 
 {% if uploaded_file_url %}
 <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
 {% endif %}
 
-<p><a href="http://localhost:8000/">Return to home</a></p>
+<p><a href="/"><button class="btn" align="left"><i class="fa fa-home"></i>Return to home</button></a></p>

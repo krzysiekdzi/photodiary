@@ -3,11 +3,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
     div {
-        width:300px;
+        width:800px;
         margin: auto;
     }
     html { 
-        background: url('http://localhost:8889/background.jpg') no-repeat center center fixed; 
+        background: url('{{imageshost}}background.jpg') no-repeat center center fixed; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -27,11 +27,14 @@
         background-color: RoyalBlue;
     }
     </style>
-
+<link rel="icon" type="image/x-icon" href="{{imageshost}}favicon.ico">
+<link rel="shortcut icon" href="{{imageshost}}favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-    <h2 align='center'><b>PhotoDiary {{diaryName}}             </b>
+    <h2 align='center'>
+        <a href='/'><button class="btn" align='left' ><i class="fa fa-home"></i></button></a>
+        <b>PhotoDiary {{diaryName}}             </b>
     <a href='upload/'><button class="btn" align='right' ><i class="fa fa-plus"></i> Add photo</button></a>
     </h2>
     <hr>
@@ -41,7 +44,7 @@
 
         <div>
 
-            <p><img src="http://localhost:8889/{{i.filePath}}" align='middle' border="3" atl="stretched" object-fit="contain"></p>
+            <a href="/{{diaryName}}/post/{{i.title}}/"><p><img src="{{imageshost}}{{i.filePath}}" align='middle' border="3" atl="stretched" object-fit="contain"></p></a>
             
         </div>
     

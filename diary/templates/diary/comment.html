@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<label for="author">Your name:  </label>
+<input id="author" type="text" name="author" maxlength="30">
+<label for="text">Text:  </label>
+<input id="text" type="text" name="text" maxlength="1000">
+<button class="btn" type="submit" align="left"><i class="fa fa"></i>Post comment</button>
+</form>
