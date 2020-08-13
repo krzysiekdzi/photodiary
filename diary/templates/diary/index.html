@@ -1,0 +1,17 @@
+<head>
+
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <h2><b>PhotoDiary</b></h2>
+    <hr>
+
+    {%for i in data%}
+    <div class="row">
+        <div class="col-md-6"><a href={{i.name}}><button>{{i.name}}</button></a></div>
+        <div class="col-md-6">{{i.description}}</div>
+    </div>
+    <hr>
+    {%endfor%}
+</body>
