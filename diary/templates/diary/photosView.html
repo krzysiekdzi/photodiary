@@ -45,7 +45,9 @@
         <div>
 
             <a href="/{{diaryName}}/post/{{i.title}}/"><p><img src="{{imageshost}}{{i.filePath}}" align='middle' border="3" atl="stretched" object-fit="contain"></p></a>
-            
+            {%for com in i.commentsList%}
+            <p>{{com.text}}</p>
+            {%endfor%}
         </div>
     
     <hr>
