@@ -26,12 +26,19 @@ def photosView(request, diaryName):
     photos = PhotoObject.objects.all()
     context = {}
     data = []
+    comments = Comment.objects.all()
     for i in photos:
         if i.diary.name == diaryName:
             path = i.filePath.split('/')
+            postComments = comments.filter(photo = i)
+            commentsList = [ {'author' : com.author,
+            'date' : com.date,
+            'text' : com.text} for com in postComments]
             data.append({'title' : i.title,\
                 'date' : str(i.date)[:16],\
-                'filePath' : path[-1]})
+                'filePath' : path[-1],
+                'comments' : commentsList})
+
     context['data'] = data
     context['diaryName'] = diaryName
     context['imageshost'] = 'http://'+os.environ['IMAGES_HOST']+':'+os.environ['IMAGES_PORT']+'/'
